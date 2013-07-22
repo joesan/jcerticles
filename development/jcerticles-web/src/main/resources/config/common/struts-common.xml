@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+    <package name="common" namespace="/common" extends="base">
+        <action name="welcome" class="welcomeAction">
+            <result name="success" type="tiles">welcome</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>
+		
+        <action name="home" class="userAction">
+            <result name="success" type="tiles">home</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>		
+
+		<action name="contact" class="contactAction">
+            <result name="success" type="tiles">contact</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>
+    </package>
+
+</struts>

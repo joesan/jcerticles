@@ -1,0 +1,54 @@
+<definitions name="jcerticles"
+   targetNamespace="http://www.q31.org/wsdl/jcerticles.wsdl"
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:tns="http://www.q31.org/wsdl/jcerticles.wsdl"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ 
+   <message name="GetAllExamsRequest">
+      <part name="firstName" type="xsd:string"/>
+   </message>
+   <message name="GetAllExamsResponse">
+      <part name="greeting" type="xsd:string"/>
+   </message>
+   <message name="GetAllExamsForExamIdRequest">
+      <part name="greeting" type="xsd:string"/>
+   </message>
+   <message name="GetAllExamsForExamIdResponse">
+      <part name="greeting" type="xsd:string"/>
+   </message>
+
+   <portType name="JCerticles_PortType">
+      <operation name="sayHello">
+         <input message="tns:SayHelloRequest"/>
+         <output message="tns:SayHelloResponse"/>
+      </operation>
+   </portType>
+
+   <binding name="JCerticles_Binding" type="tns:JCerticles_PortType">
+   <soap:binding style="rpc"
+      transport="http://schemas.xmlsoap.org/soap/http"/>
+   <operation name="sayHello">
+      <soap:operation soapAction="sayHello"/>
+      <input>
+         <soap:body
+            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+            namespace="urn:examples:helloservice"
+            use="encoded"/>
+      </input>
+      <output>
+         <soap:body
+            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+            namespace="urn:examples:helloservice"
+            use="encoded"/>
+      </output>
+   </operation>
+   </binding>
+
+   <service name="JCerticles">
+      <documentation>WSDL File for JCerticles</documentation>
+      <port binding="tns:Hello_Binding" name="Hello_Port">
+         <soap:address location="http://localhost:8080/jcerticles/">
+      </port>
+   </service>
+</definitions>

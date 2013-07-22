@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+    <package name="user" namespace="/user" extends="common">
+        <action name="moderatorList" class="userAction" method="getModeratorsList">
+            <result name="success" type="tiles">moderators</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>
+
+        <action name="register" class="userAction" method="registerNewUser">        
+            <result name="success" type="tiles">registerSuccess</result>
+            <result name="input">/register.jsp</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>
+			
+    </package>
+
+</struts>

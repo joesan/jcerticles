@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- START *********** Transaction Declaration for Facade Layer components ************
+
+    <bean id="userFacade" parent="txTemplate">
+        <property name="target">
+            <bean id="userFacadeImpl" class="org.q31.jcerticles.facade.user.impl.UserFacadeImpl"
+                  scope="prototype" init-method="init" destroy-method="cleanUp"/>
+        </property>
+    </bean>
+
+    <bean id="contentFacade" parent="txTemplate">
+        <property name="target">
+            <bean id="contentFacadeImpl" class="org.q31.jcerticles.facade.content.impl.ContentFacadeImpl"
+                  scope="prototype"/>
+        </property>
+    </bean>  -->
+
+    <!-- END ************* Transaction Declaration for Facade Layer components ************ -->
+
+    <!-- START ************** Spring bean declaration for facade components *************** -->
+
+    <!--
+
+    <bean id="userService" class="org.q31.jcerticles.core.business.user.service.impl.UserServiceImpl" />
+    <bean id="contentService" class="org.q31.jcerticles.core.business.content.service.impl.ContentServiceImpl" />  -->
+
+    <bean id="contentFacade" class="org.q31.jcerticles.facade.content.impl.ContentFacadeImpl" scope="singleton">
+        <property name="contentService" ref="contentService" />
+    </bean>
+
+    <!-- END *************** Spring bean declaration for facade components ***************  -->
+
+</beans>

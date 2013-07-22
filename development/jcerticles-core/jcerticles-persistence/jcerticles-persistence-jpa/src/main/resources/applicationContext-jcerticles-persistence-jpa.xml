@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:amq="http://activemq.apache.org/schema/core"
+       xmlns:jms="http://www.springframework.org/schema/jms"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core-5.2.0.xsd
+        http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-2.5.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd"
+       xmlns:aop="http://www.springframework.org/schema/aop">
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName">
+            <value>oracle.jdbc.driver.OracleDriver</value>
+        </property>
+        <property name="url">
+            <value>jdbc:oracle:thin:@192.168.1.2:1521:q31</value>
+        </property>
+        <property name="username">
+            <value>jcert_admin</value><!-- Use App User - jcert_app_user -->
+        </property>
+        <property name="password">
+            <value>jcertHarat2102</value><!-- Use App Password - jcertapp -->
+        </property>
+    </bean>
+
+    <!-- enables interpretation of the @PersistenceUnit/@PersistenceContext annotations providing convenient access to EntityManagerFactory/EntityManager -->
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+
+    <!-- Translate to Spring DataAccessException -->
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
+    <!-- post-processors for all standard config annotations like @Resource -->
+    <context:annotation-config/>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="persistenceUnitName" value="jugc-jpa"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="true"/>
+                <property name="generateDdl" value="false"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <bean id="txTemplate" abstract="true"
+          class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+        <property name="transactionManager" ref="txManager"/>
+        <property name="transactionAttributes">
+            <props>
+                <prop key="save*">PROPAGATION_REQUIRED, -org.q31.jcerticles.common.exception.Q31BaseException</prop>
+                <prop key="add*">PROPAGATION_REQUIRED, -org.q31.jcerticles.common.exception.Q31BaseException</prop>
+                <prop key="update*">PROPAGATION_REQUIRED, -org.q31.jcerticles.common.exception.Q31BaseException</prop>
+                <prop key="delete*">PROPAGATION_REQUIRED, -org.q31.jcerticles.common.exception.Q31BaseException</prop>
+                <prop key="move*">PROPAGATION_REQUIRED, -org.q31.jcerticles.common.exception.Q31BaseException</prop>
+                <prop key="edit*">PROPAGATION_REQUIRED, -org.q31.jcerticles.common.exception.Q31BaseException</prop>
+                <prop key="create*">PROPAGATION_REQUIRED,readOnly</prop>
+                <prop key="duplicate*">PROPAGATION_REQUIRED,readOnly</prop>
+                <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+                <prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+                <prop key="search*">PROPAGATION_REQUIRED,readOnly</prop>
+                <prop key="fetch*">PROPAGATION_REQUIRED,readOnly</prop>
+            </props>
+        </property>
+    </bean>
+    <aop:aspectj-autoproxy />
+
+    <context:load-time-weaver/>
+
+    <!-- START *********** Define Aspects For Service Layer ************ -->
+
+    <bean id="loggingAspect" class="org.q31.jcerticles.core.aspect.LoggingAspect">
+        <!-- configure properties of aspect here as normal -->
+    </bean>
+
+    <!-- END *********** Define Aspects For Service Layer ************ -->
+
+
+    <!-- START ***************** Spring bean declaration for dao components **************** -->
+
+    <!-- ******** Inject DAO components ********* -->
+    <bean id="contentDAO" class="org.q31.jcerticles.core.persistence.jpa.dao.content.ContentDAOImpl" scope="prototype" lazy-init="true"/>
+
+    <!-- END ****************** Spring bean declaration for dao components ***************** -->
+
+</beans>

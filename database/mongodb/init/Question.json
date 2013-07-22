@@ -1,0 +1,96 @@
+{questionText1: 'How many String objects are created in the following code snippet?',
+ questionSourceCode: 'public static void main (String[] args) { int x = 10; String abc = "abc"; for (i=0; i<10; i++) { if (i == 10) { try { callAnotherMethod(); if(isValid) { System.out.println(true); } } catch (Exception ex || Throwable tx) { try { for(int i=0; i<10; i++) { System.out.println("Just printing"); } } catch(Exception ex) { System.out.println("Just printing"); } finally { System.out.println("Just printing"); } throw new Exception(); } System.out.println(interesting); while (x == 10) { int a = 5; for (int a = 10; a++) { System.out.println(a); } } } } int 1 = 5; }',
+ questionType: 'R', answerCount: '4', answers: [ { answerId: 1, answerText: 'This program has compilation error. The text here exists to show how it behaves when placed next to a radio button. So far it looks good and pleasng. Not sure how it would behave when all the other radio buttons also has a similiar lengthy text as its answer. I hope it helps to have such big text as answer just for testing purposes.', correctAnswer: 'N' }, { answerId: 2, answerText: '3', correctAnswer: 'Y' }, { answerId: 3, answerText: '4', correctAnswer: 'N'}, { answerId: 4, answerText: '5', correctAnswer: 'N'} ],
+ active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 100,
+ correctAnswerDescription: 'Wait for the description to follow', isSourceCode: 'true'
+}
+
+{questionText1: 'How many String objects are created in the following code snippet?',
+ questionSourceCode: 'public static void main (String[] args) { String one = "1";String two = "2";String three = "2";String four = three;String five = new String(three);}',
+ questionType: 'R', answerCount: '4', answers: [ { answerId: 1, answerText: '2', correctAnswer: 'N' }, { answerId: 2, answerText: '3', correctAnswer: 'Y' }, { answerId: 3, answerText: '4', correctAnswer: 'N'}, { answerId: 4, answerText: '5', correctAnswer: 'N'} ],
+ active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 100,
+ correctAnswerDescription: 'Wait for the description to follow', isSourceCode: 'true'
+}
+
+{questionText1: 'Which of the following is a Java keyword?', questionType: 'C', answerCount: '4', answers: [ { answerId: '1', answerText: 'Protected', correctAnswer: 'Y' }, { answerId: 2, answerText: 'Private', correctAnswer: 'Y' }, { answerId: 3, answerText: 'Enemy', correctAnswer: 'N' },{ answerId: 4, answerText: 'Friend', correctAnswer: 'N' } ],
+ correctAnswerDescription: 'Wait for the description to follow', active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 100
+}
+
+{questionText1: 'What is the ouput of the following code snippet?', 
+ questionSourceCode: 'public static void main (String [] args) {int x=10;, String a=1; System.out.println(x + a);}',
+ questionType: 'R', answerCount: '4', answers: [ { answerId: 1, answerText: '101', correctAnswer: 'Y' }, { answerId: 2, answerText: '11', correctAnswer: 'N' }, { answerId: 3, answerText: 'Compile Error', correctAnswer: 'N' }, { answerId: 4, answerText: '110', correctAnswer: 'N' } ],
+ correctAnswerDescription: 'Wait for the description to follow', active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 100
+}
+
+{questionText1: 'How many String objects are created in the following code snippet?',
+ questionSourceCode: 'public static void main (String[] args) { int x = 10; String abc = "abc"; for (i=0; i<10; i++) { if (i == 10) { try { callAnotherMethod(); if(isValid) { System.out.println(true); } } catch (Exception ex || Throwable tx) { try { for(int i=0; i<10; i++) { System.out.println("Just printing"); } } catch(Exception ex) { System.out.println("Just printing"); } finally { System.out.println("Just printing"); } throw new Exception(); } System.out.println(interesting); while (x == 10) { int a = 5; for (int a = 10; a++) { System.out.println(a); } } } } int 1 = 5; }',
+ questionType: 'R', answerCount: '4', answers: [ { answerId: 1, answerText: 'This program has compilation error. The text here exists to show how it behaves when placed next to a radio button. So far it looks good and pleasng. Not sure how it would behave when all the other radio buttons also has a similiar lengthy text as its answer. I hope it helps to have such big text as answer just for testing purposes.', correctAnswer: 'N' }, { answerId: 2, answerText: '3', correctAnswer: 'Y' }, { answerId: 3, answerText: '4', correctAnswer: 'N'}, { answerId: 4, answerText: '5', correctAnswer: 'N'} ],
+ active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 101,
+ correctAnswerDescription: 'Wait for the description to follow', isSourceCode: 'true'
+}
+
+{questionText1: 'How many String objects are created in the following code snippet?',
+ questionSourceCode: 'public static void main (String[] args) { String one = "1";String two = "2";String three = "2";String four = three;String five = new String(three);}',
+ questionType: 'R', answerCount: '4', answers: [ { answerId: 1, answerText: '2', correctAnswer: 'N' }, { answerId: 2, answerText: '3', correctAnswer: 'Y' }, { answerId: 3, answerText: '4', correctAnswer: 'N'}, { answerId: 4, answerText: '5', correctAnswer: 'N'} ],
+ active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 101,
+ correctAnswerDescription: 'Wait for the description to follow', isSourceCode: 'true'
+}
+
+{questionText1: 'Which of the following is a Java keyword?', questionType: 'C', answerCount: '4', answers: [ { answerId: '1', answerText: 'Protected', correctAnswer: 'Y' }, { answerId: 2, answerText: 'Private', correctAnswer: 'Y' }, { answerId: 3, answerText: 'Enemy', correctAnswer: 'N' },{ answerId: 4, answerText: 'Friend', correctAnswer: 'N' } ],
+ correctAnswerDescription: 'Wait for the description to follow', active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 101
+}
+
+{questionText1: 'What is the ouput of the following code snippet?', 
+ questionSourceCode: 'public static void main (String [] args) {int x=10;, String a=1; System.out.println(x + a);}',
+ questionType: 'R', answerCount: '4', answers: [ { answerId: 1, answerText: '101', correctAnswer: 'Y' }, { answerId: 2, answerText: '11', correctAnswer: 'N' }, { answerId: 3, answerText: 'Compile Error', correctAnswer: 'N' }, { answerId: 4, answerText: '110', correctAnswer: 'N' } ],
+ correctAnswerDescription: 'Wait for the description to follow', active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 101
+}
+
+{questionText1: 'How many String objects are created in the following code snippet?',
+ questionSourceCode: 'public static void main (String[] args) { int x = 10; String abc = "abc"; for (i=0; i<10; i++) { if (i == 10) { try { callAnotherMethod(); if(isValid) { System.out.println(true); } } catch (Exception ex || Throwable tx) { try { for(int i=0; i<10; i++) { System.out.println("Just printing"); } } catch(Exception ex) { System.out.println("Just printing"); } finally { System.out.println("Just printing"); } throw new Exception(); } System.out.println(interesting); while (x == 10) { int a = 5; for (int a = 10; a++) { System.out.println(a); } } } } int 1 = 5; }',
+ questionType: 'R', answerCount: '4', answers: [ { answerId: 1, answerText: 'This program has compilation error. The text here exists to show how it behaves when placed next to a radio button. So far it looks good and pleasng. Not sure how it would behave when all the other radio buttons also has a similiar lengthy text as its answer. I hope it helps to have such big text as answer just for testing purposes.', correctAnswer: 'N' }, { answerId: 2, answerText: '3', correctAnswer: 'Y' }, { answerId: 3, answerText: '4', correctAnswer: 'N'}, { answerId: 4, answerText: '5', correctAnswer: 'N'} ],
+ active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 102,
+ correctAnswerDescription: 'Wait for the description to follow', isSourceCode: 'true'
+}
+
+{questionText1: 'How many String objects are created in the following code snippet?',
+ questionSourceCode: 'public static void main (String[] args) { String one = "1";String two = "2";String three = "2";String four = three;String five = new String(three);}',
+ questionType: 'R', answerCount: '4', answers: [ { answerId: 1, answerText: '2', correctAnswer: 'N' }, { answerId: 2, answerText: '3', correctAnswer: 'Y' }, { answerId: 3, answerText: '4', correctAnswer: 'N'}, { answerId: 4, answerText: '5', correctAnswer: 'N'} ],
+ active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 102,
+ correctAnswerDescription: 'Wait for the description to follow', isSourceCode: 'true'
+}
+
+{questionText1: 'Which of the following is a Java keyword?', questionType: 'C', answerCount: '4', answers: [ { answerId: '1', answerText: 'Protected', correctAnswer: 'Y' }, { answerId: 2, answerText: 'Private', correctAnswer: 'Y' }, { answerId: 3, answerText: 'Enemy', correctAnswer: 'N' },{ answerId: 4, answerText: 'Friend', correctAnswer: 'N' } ],
+ correctAnswerDescription: 'Wait for the description to follow', active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 102
+}
+
+{questionText1: 'What is the ouput of the following code snippet?', 
+ questionSourceCode: 'public static void main (String [] args) {int x=10;, String a=1; System.out.println(x + a);}',
+ questionType: 'R', answerCount: '4', answers: [ { answerId: 1, answerText: '101', correctAnswer: 'Y' }, { answerId: 2, answerText: '11', correctAnswer: 'N' }, { answerId: 3, answerText: 'Compile Error', correctAnswer: 'N' }, { answerId: 4, answerText: '110', correctAnswer: 'N' } ],
+ correctAnswerDescription: 'Wait for the description to follow', active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 102
+}
+
+{questionText1: 'How many String objects are created in the following code snippet?',
+ questionSourceCode: 'public static void main (String[] args) { int x = 10; String abc = "abc"; for (i=0; i<10; i++) { if (i == 10) { try { callAnotherMethod(); if(isValid) { System.out.println(true); } } catch (Exception ex || Throwable tx) { try { for(int i=0; i<10; i++) { System.out.println("Just printing"); } } catch(Exception ex) { System.out.println("Just printing"); } finally { System.out.println("Just printing"); } throw new Exception(); } System.out.println(interesting); while (x == 10) { int a = 5; for (int a = 10; a++) { System.out.println(a); } } } } int 1 = 5; }',
+ questionType: 'R', answerCount: '4', answers: [ { answerId: 1, answerText: 'This program has compilation error. The text here exists to show how it behaves when placed next to a radio button. So far it looks good and pleasng. Not sure how it would behave when all the other radio buttons also has a similiar lengthy text as its answer. I hope it helps to have such big text as answer just for testing purposes.', correctAnswer: 'N' }, { answerId: 2, answerText: '3', correctAnswer: 'Y' }, { answerId: 3, answerText: '4', correctAnswer: 'N'}, { answerId: 4, answerText: '5', correctAnswer: 'N'} ],
+ active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 103,
+ correctAnswerDescription: 'Wait for the description to follow', isSourceCode: 'true'
+}
+
+{questionText1: 'How many String objects are created in the following code snippet?',
+ questionSourceCode: 'public static void main (String[] args) { String one = "1";String two = "2";String three = "2";String four = three;String five = new String(three);}',
+ questionType: 'R', answerCount: '4', answers: [ { answerId: 1, answerText: '2', correctAnswer: 'N' }, { answerId: 2, answerText: '3', correctAnswer: 'Y' }, { answerId: 3, answerText: '4', correctAnswer: 'N'}, { answerId: 4, answerText: '5', correctAnswer: 'N'} ],
+ active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 103,
+ correctAnswerDescription: 'Wait for the description to follow', isSourceCode: 'true'
+}
+
+{questionText1: 'Which of the following is a Java keyword?', questionType: 'C', answerCount: '4', answers: [ { answerId: '1', answerText: 'Protected', correctAnswer: 'Y' }, { answerId: 2, answerText: 'Private', correctAnswer: 'Y' }, { answerId: 3, answerText: 'Enemy', correctAnswer: 'N' },{ answerId: 4, answerText: 'Friend', correctAnswer: 'N' } ],
+ correctAnswerDescription: 'Wait for the description to follow', active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 103
+}
+
+{questionText1: 'What is the ouput of the following code snippet?', 
+ questionSourceCode: 'public static void main (String [] args) {int x=10;, String a=1; System.out.println(x + a);}',
+ questionType: 'R', answerCount: '4', answers: [ { answerId: 1, answerText: '101', correctAnswer: 'Y' }, { answerId: 2, answerText: '11', correctAnswer: 'N' }, { answerId: 3, answerText: 'Compile Error', correctAnswer: 'N' }, { answerId: 4, answerText: '110', correctAnswer: 'N' } ],
+ correctAnswerDescription: 'Wait for the description to follow', active: 'Y', created: new Date('07/27/2012'), toughness: 'B', examId: 10010, technologyId: 10, subTechnologyId: 103
+}
+

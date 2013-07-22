@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_0.xsd">
+
+    <entity class="org.q31.jcerticles.common.domain.user.UserDetails" name="UserDetails">
+        <table name="JUGC_USER"/>
+        <attributes>
+            <id name="userId">
+                <generated-value strategy="AUTO"/>
+            </id>
+
+            <basic name="firstName">
+                <column name="FIRST_NAME" length="40"/>
+            </basic>
+            <basic name="lastName">
+                <column name="LAST_NAME" length="40"/>
+            </basic>
+            <basic name="email">
+                <column name="EMAIL" length="40"/>
+            </basic>
+            <basic name="mobile">
+                <column name="MOBILE" length="40"/>
+            </basic>
+        </attributes>
+       
+        
+    </entity>
+
+
+
+</entity-mappings>

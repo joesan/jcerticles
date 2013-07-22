@@ -1,0 +1,288 @@
+/* ------------------------------------------------------
+
+   AUTHOR           :  	Erwin Aligam
+   WEBSITE          :   http://www.styleshout.com/
+   TEMPLATE NAME    : 	Stylevantage - orange
+   TEMPLATE CODE    : 	S-0001
+   VERSION          :   1.1
+   LAST DATE MOD    :   January 21, 2010
+
+ --------------------------------------------------------- */
+ 
+/* -------------------------------------------------------
+   HTML ELEMENTS
+---------------------------------------------------------- */
+
+/* top elements */
+* { margin: 0; padding: 0; outline: 0; }
+
+body {
+	margin: 0; padding: 0;
+	font: 12px/160% 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, Sans-Serif;	
+	color: #666666;	
+	text-align: center;		
+}
+
+/* links */
+a:link, a:visited {
+	background: inherit;
+	color: #EC981F;
+        text-decoration: none;
+}
+a:hover {
+	background: inherit;
+	color: #806B4D;
+}
+
+/* headers */
+h1, h2, h3 {
+	font: bold 1em 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, Sans-Serif;
+	color: #555;
+}
+h1 { font-size: 1.4em; }
+h2 { font-size: 1.3em; }
+h3 { font-size: 1.2em; font-weight: bold; }
+
+#main h1, #rightbar h1 {
+	padding: 10px 0 5px 5px;
+	margin: 0 0 10px 10px;
+   	border-bottom: 1px solid #f2f2f2;
+}	
+#sidebar h1 {
+	padding: 10px 0px 5px 5px;
+	margin: 0 0 5px 0;
+}
+
+p, h1, h2, h3 {
+	margin: 10px 15px;
+}
+ul, ol {
+	margin: 10px 30px;
+	padding: 0 15px;	
+	color: #EC981F;	
+}
+ul span, ol span {
+	color: #666666;
+}
+
+/* images */
+img {
+	background: #FAFAFA;
+        border: 1px solid #E4E4E4;
+	padding: 8px;
+}
+img.float-right {
+  margin: 5px 0px 5px 15px;  
+}
+img.float-left {
+  margin: 5px 15px 5px 0px;
+}
+
+code1 {
+  margin: 5px 0;
+  padding: 15px 10px;
+  text-align: left;
+  display: block;
+  overflow: auto;  
+  font: 500 1em/1.5em 'Lucida Console', 'couriecommonr new', monospace;
+  /* white-space: pre; */
+  background: #FAFAFA;
+  border: 1px solid #f2f2f2;  
+  border-left: 3px solid #EC981F;
+}
+acronym {
+  cursor: help;
+  border-bottom: 1px solid #777;
+}
+blockquote {
+	margin: 15px;
+ 	padding: 5px 5px 5px 32px;
+  	background: #FAFAFA url(../../images/common/quote.gif) no-repeat 5px 10px !important; 
+	background-position: 8px 10px;
+	border: 1px solid #f2f2f2; 
+	border-left: 3px solid #EC981F;  
+	font-weight: bold; 
+}
+
+/* ----------------------------------
+    Layout
+------------------------------------- */
+#wrap {
+	margin: 0 auto;
+    width: 850px;
+	height: 635px;
+	text-align: left;		
+	background: #FFF;	
+}
+#content-wrap {
+	clear:both;
+        margin: 0; padding:0;
+	width: 850px;	
+}
+
+/* header */
+#header {
+	position: relative;
+	background: url(../../images/common/headerbg-orange.gif) repeat-x 0 0;
+	height: 84px;	
+}
+#header h1#logo {
+	position: absolute;
+	margin: 0; padding: 0;
+	font: bold 3.5em 'Trebuchet MS', Arial, Sans-serif;
+	letter-spacing: -3px;
+	color: #CCC;
+	text-transform: lowercase;
+	/* change the values of top and Left to adjust the position of the logo*/
+	top: 0; left: 13px;	
+}
+#header h2#slogan {
+	position: absolute;
+	margin: 0; padding: 0;
+	font: bold 11px 'Trebuchet MS', Arial, Sans-serif;
+	text-transform: none;
+	color: #FFF;
+	/* change the values of top and Left to adjust the position of the slogan*/
+	top: 48px; left:70px;
+}
+#header .searchform {
+	position: absolute;
+	top: 5px; right: 3px;
+}
+
+/* main column */
+#main {
+	float: left;
+   	margin-left: 0px;
+	padding: 10px 0 0 6.8px;
+	width: 99%;	
+	border-left: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+}
+
+.post-footer {
+	background-color: #FAFAFA;
+	padding: 5px; margin-top: 20px;
+	font-size: .9em;
+	border: 1px solid #f2f2f2;
+}
+.post-footer .date {
+	background: url(../../images/common/clock.gif) no-repeat left center;
+	padding-left: 20px; margin: 0 10px 0 5px;
+}
+.post-footer .comments {
+	background: url(../../images/common/comment.gif) no-repeat left center;
+	padding-left: 20px; margin: 0 10px 0 5px;
+}
+.post-footer .readmore {
+	background: url(../../images/common/page.gif) no-repeat left center;
+	padding-left: 20px; margin: 0 10px 0 5px;
+}
+
+/* sideabar */
+#sidebar {
+	float: left;
+	width: 21%;
+	margin: 0;	padding: 10px 0 0 0;
+	display: inline;	
+}
+#sidebar ul.sidemenu {
+	list-style: none;
+	text-align: left;
+	margin: 0 0 8px 0;	
+	padding: 0;
+	text-decoration: none;
+    font-size: .9em;
+    border-top: 1px solid #EFF0F1;
+}
+#sidebar ul.sidemenu li {
+	border-bottom: 1px solid #EFF0F1;
+	background: url(../../images/common/arrow.gif) no-repeat 2px 9px;
+	padding: 3px 5px 3px 18px;
+}
+
+* html body #sidebar ul.sidemenu li { height: 1%; }
+
+#sidebar ul.sidemenu a {
+	font-weight: bold;
+	background-image: none;
+	text-decoration: none;	
+}
+
+/* rightbar */
+#rightbar {
+	float: right;
+	width: 21%;
+	padding: 10px 0 0 0;
+    margin: 0;
+}
+
+/* footer */
+#footer {
+	clear: both;
+	background: #FFF url(../../images/common/footerbg.gif) repeat-x left top;
+	border-top: 1px solid #F2F2F2;
+	text-align: center;	
+	height: 40px;
+    font-size: .9em;
+}
+
+#footer a { text-decoration: none; }
+
+/* menu */
+#menu {
+	clear: both;
+	margin: 0; padding: 0;	
+}
+#menu ul {	
+	position: relative; 
+	bottom: 4px;
+	margin: 0; padding: 0;	
+	float: left;
+	font: bold 1.1em 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, Sans-Serif;
+	width: 850px;/* 775px; */
+	border: 1px solid #808080;
+	border-width: 0 0 4px 0;	
+	list-style: none;
+}
+#menu ul li{
+	display: inline;	
+}
+#menu ul li a {	
+	position: relative; bottom: -4px;
+	float: left;
+	color: #808080;
+	padding: 5px 10px;
+	text-decoration: none;
+	background: white url(../../images/common/menudivide.gif) repeat-y right top; 
+	border-bottom: 4px solid #808080; 	
+}
+#menu ul li a:hover{
+	color: black;
+	background-color: #F3F3F3; 
+	border-bottom: 4px solid #FFA600;
+}
+#menu ul li#current a{
+	color: #333;
+	background-color: #F3F3F3; 
+	border-bottom: 4px solid #FFA600;
+}
+
+.radio-label {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* Alignment classes */
+.float-left   { float: left;}
+.float-right  { float: right; }
+.align-left   { text-align: left; }
+.align-right  { text-align: right; }
+.align-center { text-align: center;	}  
+
+/* display classes */
+.clear  { clear: both; }
+.block  { display: block; }
+.hide   { display: none; }	
+.orange { color: #FFA600; }

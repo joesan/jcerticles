@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <!-- This file contains the bean definitions for the common web related beans -->
+    
+    <!-- COMMON -->
+    <bean id="welcomeAction" scope="prototype" class="org.q31.jcerticles.web.common.action.WelcomeAction"></bean>    
+    
+    <bean id="contactAction" scope="prototype" class="org.q31.jcerticles.web.common.action.ContactAction"></bean>
+
+    <!-- USER -->
+    <bean id="userAction" scope="prototype" class="org.q31.jcerticles.web.user.action.impl.UserAction"></bean>   
+
+    <!-- CONTENT -->
+    <bean id="contentAction" scope="prototype" class="org.q31.jcerticles.web.content.action.impl.AddContentAction">
+        <property name="contentFacade" ref="contentFacade"/>
+    </bean>
+    <bean id="examContentAction" scope="prototype" class="org.q31.jcerticles.web.content.action.impl.ExamContentAction">
+        <property name="contentFacade" ref="contentFacade"/>
+    </bean>
+   
+    <bean id="articleContentAction" scope="prototype" class="org.q31.jcerticles.web.content.action.impl.ArticleContentAction"></bean>
+    <bean id="blogContentAction" scope="prototype" class="org.q31.jcerticles.web.content.action.impl.BlogContentAction"></bean>
+
+</beans>

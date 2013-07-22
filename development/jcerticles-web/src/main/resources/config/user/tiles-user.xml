@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="welcome" extends="base">
+		<put-attribute name="content" value="/WEB-INF/pages/success.jsp" />
+	</definition>
+
+	<definition name="moderators" extends="base">
+		<put-attribute name="body" value="/WEB-INF/pages/user/moderatorsList.jsp" />
+	</definition>
+	
+	<definition name="registerSuccess" extends="base">
+		<put-attribute name="body" value="/WEB-INF/pages/user/registerSuccess.jsp" />
+	</definition>	
+
+</tiles-definitions>

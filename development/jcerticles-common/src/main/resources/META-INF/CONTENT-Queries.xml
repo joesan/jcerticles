@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_0.xsd">
+
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>FIELD</access>
+			<cascade-persist/>
+		</persistence-unit-defaults>		
+	</persistence-unit-metadata>
+	
+	<package>org.q31.jcerticles.common.domain.content</package>
+	
+		<!-- Named Query definitions -->
+		<named-query name="content.questions.questionsForTechnologyId">
+          <query>
+            SELECT ques FROM Question ques WHERE ques.technologyId = :technologyId 
+                     AND ques.subTechnologyId = :subTechnologyId
+          </query>
+   		</named-query>
+   		
+		<named-query name="content.exam.examsForTechnologyId">
+          <query>
+            SELECT exam FROM Exam exam WHERE exam.technologyId = :technologyId
+          </query>
+   		</named-query>
+   		
+   		<named-query name="content.questions.questionsForExamId">
+          <query>
+            SELECT ques FROM Question ques WHERE ques.examId = :examId
+          </query>
+   		</named-query>
+   		
+   		<named-query name="content.questions.answersForQuestionId">
+          <query>
+            SELECT ans FROM Answer ans, Question ques WHERE ques.questionId = :questionId
+          </query>
+   		</named-query> 
+	
+	<entity class="Question">
+		<table name="Q31_CORE_QUESTION"/>
+		<attributes>
+		  <id name="questionId">
+		    <column name="question_id"/>
+			<generated-value strategy="TABLE" generator="questionIdTblGen"/>
+			<table-generator name="questionIdTblGen" table="Q31_ID_GENERATOR"  
+                    pk-column-value="Q31_CORE_QUESTION" pk-column-name="GENERATOR_NAME"  
+                    value-column-name="NEXT_VAL" /> 			
+		  </id>
+		  <basic name="examId">
+			<column name="exam_id" length="10"/>
+		  </basic>
+		  <basic name="questionText">
+		    <column name="question_text" length="4000"/>
+		  </basic>
+		  <basic name="questionType">
+		    <column name="question_type" length="1"/>		  
+		  </basic>
+		  <basic name="active">
+		    <column name="active_yn" length="1"/>		  
+		  </basic>
+		  <basic name="technologyId">
+		    <column name="technology_id" length="10"/>		  
+		  </basic>
+		  <basic name="subTechnologyId">
+		    <column name="sub_technology_id" length="10"/>		  
+		  </basic>		  
+		  <basic name="difficultyLevel">
+		    <column name="difficulty_level" length="10"/>		  
+		  </basic>
+		  <basic name="createDate">
+		    <column name="create_date" length="100"/>		  
+		  </basic>
+		  <basic name="author">
+		    <column name="author" length="10"/>		  
+		  </basic>
+		  <basic name="answerCount">
+		    <column name="answer_count" length="10"/>		  
+		  </basic>
+		  <one-to-many name="answers" target-entity="org.q31.jcerticles.common.domain.content.Answer" mapped-by="question"/>
+		  <transient name="mappedQuestionId"/>
+		  <transient name="answersGivenByUser"/>
+		  <transient name="isAnswered"/>
+		  <transient name="isAnswerCorrect"/>		  
+		</attributes>
+	</entity>
+	
+	<entity class="Answer">
+		<table name="Q31_CORE_ANSWER"/>
+		<attributes>
+		  <id name="answerId">
+		  	<column name="answer_id"/>
+			<generated-value strategy="TABLE" generator="answerIdTblGen"/>
+			<table-generator name="answerIdTblGen" table="Q31_ID_GENERATOR"  
+                    pk-column-value="Q31_CORE_ANSWER" pk-column-name="GENERATOR_NAME"  
+                    value-column-name="NEXT_VAL" />		
+		  </id>
+		  <basic name="answerText">
+		    <column name="answer_text" length="4000"/>
+		  </basic>
+		  <basic name="correctAnswer">
+		    <column name="correct_answer_yn" length="1"/>		  
+		  </basic>
+		  <basic name="answerDescription">
+		    <column name="answer_description" length="4000"/>		  
+		  </basic>
+          <many-to-one name="question" fetch="LAZY">
+           	<join-column name="question_id"/>
+          </many-to-one>
+          <transient name="isAnswerSelectedByUser"/>		  
+		</attributes>		
+	</entity>
+	
+	<entity class="Technology">
+		<table name="Q31_CORE_TECHNOLOGY"/>
+		<attributes>
+		  <id name="technologyId">
+		  	<column name="technology_id"/>
+			<generated-value strategy="TABLE" generator="technologyIdTblGen"/>
+			<table-generator name="technologyIdTblGen" table="Q31_ID_GENERATOR"  
+                    pk-column-value="Q31_CORE_TECHNOLOGY" pk-column-name="GENERATOR_NAME"  
+                    value-column-name="NEXT_VAL" />
+		  </id>
+		  <basic name="technologyName">
+			<column name="technology_name" length="50"/>
+		  </basic>
+		  <basic name="version">
+		    <column name="version" length="4000"/>
+		  </basic>
+		  <basic name="createDate">
+		    <column name="create_date" length="1"/>		  
+		  </basic>
+		  <basic name="updateDate">
+		    <column name="update_date" length="4000"/>		  
+		  </basic>
+		</attributes>		
+	</entity>
+	
+	<entity class="Exam">
+		<table name="Q31_CORE_EXAM"/>
+		<attributes>
+		  <id name="examId">
+		  	<column name="exam_id"/>
+			<generated-value strategy="TABLE" generator="examIdTblGen"/>
+			<table-generator name="examIdTblGen" table="Q31_ID_GENERATOR"  
+                    pk-column-value="Q31_CORE_EXAM" pk-column-name="GENERATOR_NAME"  
+                    value-column-name="NEXT_VAL" />
+		  </id>
+		  <basic name="technologyId">
+			<column name="technology_Id" length="50"/>
+		  </basic>
+		  <basic name="examDescription">
+			<column name="exam_description" length="80"/>
+		  </basic>
+		  <basic name="examTitle">
+			<column name="exam_Title" length="50"/>
+		  </basic>		  
+		  <basic name="totalQuestions">
+			<column name="total_questions" length="50"/>
+		  </basic>
+		  <basic name="createDate">
+		    <column name="create_date" length="1"/>		  
+		  </basic>
+		  <basic name="updateDate">
+		    <column name="update_date" length="4000"/>		  
+		  </basic>
+		</attributes>		
+	</entity>	
+	
+</entity-mappings>

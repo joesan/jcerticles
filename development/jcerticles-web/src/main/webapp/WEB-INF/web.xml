@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<display-name>jcerticles</display-name>
+
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- START ******************** All Servlet Context Parameters ********************* -->
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext-jcerticles.xml</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/log4j.properties</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
+		<param-value>/WEB-INF/classes/config/common/tiles-common.xml, /WEB-INF/classes/config/user/tiles-user.xml, /WEB-INF/classes/config/content/tiles-content.xml</param-value>
+	</context-param>    
+
+	<!-- END ********************* All Servlet Context Parameters ********************** -->
+
+	<!-- START ************************ All necessary listeners ************************ -->
+
+    <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    </listener>    
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
+	</listener>
+
+	<!-- END ************************* All necessary listeners ************************* -->
+
+	<!-- START ************************* All necessary filters ************************* -->
+
+    <!-- Enable this filter when using JPA and Oracle as Persistence -->
+	<!--filter>
+		<filter-name>jpaFilter</filter-name>
+		<filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>jpaFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping-->
+
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- Spring's Security Configuration
+	<filter>
+	    <filter-name>springSecurityFilterChain</filter-name>
+	    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>springSecurityFilterChain</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>  -->
+	
+
+	<!-- END ************************** All necessary filters ************************** -->
+
+    <!-- START ************************* All Startup Classes ************************** -->
+
+	<servlet>
+	  <servlet-name>StartUpFileIndexer</servlet-name>
+	  <servlet-class>com.quintilis31.home.web.common.FileIndexerServlet</servlet-class>
+	  <load-on-startup>-1</load-on-startup>
+	</servlet>
+
+    <!-- END ************************* All Startup Classes **************************** -->
+
+
+</web-app>

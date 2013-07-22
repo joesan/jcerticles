@@ -1,0 +1,4 @@
+{_id: 100, technologyId:10, subTechnology: 'Collections',  subTechnologyDescription: 'Java Generics and Collections API'}
+{_id: 101, technologyId:10, subTechnology: 'Fundamentals', subTechnologyDescription: 'Core Java basics'}
+{_id: 102, technologyId:10, subTechnology: 'Flow Control', subTechnologyDescription: 'Control statements and looping'}
+{_id: 103, technologyId:10, subTechnology: 'OO Concepts',  subTechnologyDescription: 'Basic Object Oriented Programming'}

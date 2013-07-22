@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-2.0.xsd" default-lazy-init="true">
+
+	<!--import resource="classpath:/config/common/applicationContext-common.xml" / -->
+	<import resource="classpath:/config/common/applicationContext-velocity-email.xml"/>
+	<import resource="classpath:/config/core/applicationContext-jcerticles-business.xml" />
+    <import resource="classpath:/config/facade/applicationContext-jcerticles-facade.xml" />
+    <import resource="classpath:/config/common/applicationContext-jcerticles-web.xml" />
+    <!--import resource="classpath:/config/mongodb/applicationContext-jcerticles-persistence-mongodb.xml" /-->
+	<import resource="classpath:/config/common/applicationContext-security-common.xml" />
+
+</beans>
+

@@ -1,0 +1,5 @@
+{_id: 10010, technologyId: 10, subTechnologyId:100, examName: 'Java', examDescription: 'Java Generics and Collections API', created: new Date('03/28/2009'), totalQuestions: 20}
+{_id: 10011, technologyId: 10, subTechnologyId:101, examName: 'Java', examDescription: 'Core Java basics',                  created: new Date('03/28/2009'), totalQuestions: 20}
+{_id: 10012, technologyId: 10, subTechnologyId:102, examName: 'Java', examDescription: 'Control statements and looping',    created: new Date('03/28/2009'), totalQuestions: 20}
+{_id: 10013, technologyId: 10, subTechnologyId:103, examName: 'Java', examDescription: 'Basic Object Oriented Programming', created: new Date('03/28/2009'), totalQuestions: 20}
+

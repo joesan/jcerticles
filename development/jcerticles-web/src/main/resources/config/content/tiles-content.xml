@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	
+	<definition name="exams" extends="base">
+		<put-attribute name="body" value="/WEB-INF/pages/content/allExams.jsp" />		
+	</definition>
+	
+	<definition name="ckedit" extends="base">
+		<put-attribute name="body" value="/WEB-INF/pages/content/createContent.jsp" />		
+	</definition>	
+	
+	<definition name="archiveMeetUp" extends="base">
+		<put-attribute name="body" value="/WEB-INF/pages/content/archiveMeetUp.jsp" />		
+	</definition>
+	
+	<definition name="musings" extends="base">
+		<put-attribute name="body" value="/WEB-INF/pages/content/musings.jsp" />		
+	</definition>
+	
+	<definition name="codeSamples" extends="base">
+		<put-attribute name="body" value="/WEB-INF/pages/content/codeSamples.jsp" />		
+	</definition>	
+	
+	<definition name="searchArticles" extends="base">
+		<put-attribute name="body" value="/WEB-INF/pages/content/searchArticles.jsp" />		
+	</definition>
+	
+	<definition name="allExamsForTechnology" extends="examBase">
+		<put-attribute name="examBody" value="/WEB-INF/pages/content/technology/listAllExamsForTechnology.jsp" />
+	</definition>
+
+    <definition name="examQuestion" extends="base">
+        <put-attribute name="body" value="/WEB-INF/pages/content/examQuestion.jsp" />
+    </definition>
+
+    <definition name="reviewExam" extends="base">
+        <put-attribute name="body" value="/WEB-INF/pages/content/reviewExam.jsp" />
+    </definition>
+
+    <definition name="evaluateExam" extends="base">
+        <put-attribute name="body" value="/WEB-INF/pages/content/examResult.jsp" />
+    </definition>
+
+    <definition name="examReview" extends="base">
+        <put-attribute name="body" value="/WEB-INF/pages/content/reviewExam.jsp" />
+    </definition>
+
+</tiles-definitions>

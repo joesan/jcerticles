@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <aop:aspectj-autoproxy />
+
+    <context:load-time-weaver/>
+
+    <!-- START *********** Define Aspects For Service Layer ************ -->
+    
+    <!--bean id="loggingAspect" class="org.q31.jcerticles.core.aspect.LoggingAspect"-->
+        <!-- configure properties of aspect here as normal -->
+    <!--/bean-->
+
+    <!-- END *********** Define Aspects For Service Layer ************ -->
+
+    <!-- START ******** Spring bean declaration for service, repository components ********* -->
+
+    <bean id="userService" class="org.q31.jcerticles.core.business.user.service.impl.UserServiceImpl" scope="singleton">
+    	<property name="userNotificationService" ref="userNotificationService" />   
+    </bean>
+
+    <bean id="contentService" class="org.q31.jcerticles.core.business.content.service.impl.ContentServiceImpl" />
+    
+    <bean id="userNotificationService" class="org.q31.jcerticles.core.business.util.notification.impl.UserNotificationImpl">
+    	<property name="emailSender" ref="jugcEmailSender"/>
+    </bean>
+
+    <!-- END ********* Spring bean declaration for service, repository components ********** -->
+
+</beans>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+    <package name="base" namespace="/" extends="struts-default, tiles-default">
+
+    <interceptors>
+
+			<interceptor-stack name="q31DefaultStack">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="modelDriven" />
+				<interceptor-ref name="fileUpload" />
+				<interceptor-ref name="checkbox" />
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError" />
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">
+						input,back,cancel,browse
+					</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods">
+						input,back,cancel,browse
+					</param>
+				</interceptor-ref>
+			</interceptor-stack>
+			
+			<interceptor-stack name="registrationStack">
+			    <interceptor-ref name="q31DefaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+    </package>
+
+	<include file="config/common/struts-common.xml" />
+    <include file="config/user/struts-user.xml" />
+    <include file="config/content/struts-content.xml"/>
+
+</struts>

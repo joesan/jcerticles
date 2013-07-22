@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+    <package name="content" namespace="/content" extends="base">
+    
+        <!-- loadCoreJavaExams can be safely deleted -->
+        <action name="loadCoreJavaExams" class="examContentAction">
+			<result>/WEB-INF/pages/content/technology/coreJava.jsp</result>
+		</action>
+    
+    	<!-- loadJSPExams can be safely deleted -->
+    	<action name="loadJSPExams" class="examContentAction">
+			<result>/WEB-INF/pages/content/technology/jspAndServlets.jsp</result>
+		</action>
+    
+        <action name="exams" class="examContentAction">            
+            <result name="success" type="tiles">exams</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>
+		
+		<!-- Show all the available exams for a given technology -->
+        <action name="allExamsForTechnology" class="examContentAction" method="getAllExamsForTechnology">
+            <result name="success" type="tiles">allExamsForTechnology</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>
+		
+		<!-- Initialize and prepare questions for an Exam -->
+        <action name="startExam" class="examContentAction" method="startExam">
+            <result name="success" type="tiles">examQuestion</result>
+            <result name="input" type="redirect">exams</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+        </action>
+		
+		<!-- Fetch the next Question and Answer for the current Exam -->
+		<action name="nextQuestion" class="examContentAction" method="getNextQuestion">
+            <result name="success" type="tiles">examQuestion</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>
+
+        <!-- Go to a particular question -->
+        <action name="goToQuestion" class="examContentAction" method="getQuestionForQuestionId">
+            <result name="success" type="tiles">examQuestion</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+        </action>
+		
+		<!-- Evaluate an Exam as soon as it is completed -->
+		<action name="reviewExam" class="examContentAction" method="reviewExam">
+            <result name="success" type="tiles">reviewExam</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>
+
+        <!-- Evaluate an Exam as soon as it is completed -->
+        <action name="evaluateExam" class="examContentAction" method="evaluateExam">
+            <result name="success" type="tiles">evaluateExam</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+        </action>
+		
+        <action name="archiveMeetUp" class="meetUpAction" method="getArchiveMeetUpList">
+            <result name="startExamsuccess" type="tiles">archiveMeetUp</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>
+		
+        <action name="searchArticles" class="articleContentAction" method="getLatestArticles">
+            <result name="success" type="tiles">searchArticles</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>
+		
+		<action name="searchArticlesForQuery" class="articleContentAction" method="getFileSearchResultList">
+            <result name="success" type="tiles">searchArticles</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>
+		
+		<action name="musings" class="blogContentAction" method="getAllBlogs">
+            <result name="success" type="tiles">musings</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>
+		
+	    <action name="codeSamples" class="contentAction">
+            <result name="success" type="tiles">codeSamples</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>
+		<!-- TODO... contactUs action need to be implemented... -->
+	    <action name="contactUs" class="contentAction">
+            <result name="success" type="tiles">sponsor</result>
+            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</action>		
+
+    </package>
+
+</struts>
